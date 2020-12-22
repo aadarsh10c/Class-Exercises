@@ -14,13 +14,29 @@ class Bike:
         """
         print(f"{self.name} is getting destroyed")
         
-    def honk(self):          #A general method, always remeber to pass self as argumen or it throws error
-        self.count+=1
+    def honk(self,x):          #A general method, always remeber to pass self as argumen or it throws error
+        self.count+=x
         print(f"Honk!!! count incresed to {self.count}")
 
 
 #create an instance
 s = Bike("Sam")            #Create an object of class Bike   
-s.honk()
-s.honk()
+s.honk(2)
+s.honk(4)
 s=42                     #object is destroyed as s is now pointing to int class object
+
+"""
+Now we will see inheritaance, i
+created a class called honda, which is 
+a 'child' of class Bike, or we can say class honda is
+an extension of class of parent class Bike
+"""  
+
+class honda(Bike):
+    qty=0
+    def speed(self,x):
+        print(f'Speed is {x}')
+
+h = honda('miko')
+h.honk(1)
+h.speed(150)
